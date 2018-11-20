@@ -181,6 +181,9 @@ while not done:
         spawnrate -= 1
         spawnrate = max(spawnrate, 2)
         level_count -= 75
+    elif level_count >= 75:
+        if collision:
+            level_count += spawnrate
 
     collision = pygame.sprite.spritecollideany(player_ship, all_comets)
     if collision != None:
